@@ -1,9 +1,9 @@
 import time
 
 while True:
-    i = 0
-    ii = 0
-    iii = 0
+    i = 0 # секунди
+    ii = 0 # хвилини
+    iii = 0 # години
     time_user = int(input("Введіть кількість секунд: "))
     for q in range(time_user):
         time.sleep(1)
