@@ -21,6 +21,6 @@ xdata = names
 ydata = frequency
 
 pylab.bar(xdata, ydata)
-pylab.savefig('sentences.png',dpi=200)
+pylab.savefig('Sentences 3.png',dpi=200)
 plt.title('Кількість речень на сайті')
 pylab.show()

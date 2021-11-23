@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 from array import *
-import csv
 import pylab
 
 r = requests.get("https://allstars.ua/ua")
@@ -21,4 +20,5 @@ xdata = letters
 ydata = frequency
 
 pylab.bar(xdata,ydata)
+pylab.savefig('Diahrama 2.png',dpi=200)
 pylab.show()
