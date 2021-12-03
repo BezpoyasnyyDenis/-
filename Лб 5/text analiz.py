@@ -1,55 +1,57 @@
 import os
 
-filename = "Vedmak.txt"
+text = "Vedmak.txt"
 
-def g_words(filename):
-    with open(filename, encoding="utf8") as file:
+def words_1(text_file):
+    with open(text_file, encoding = "utf8") as file:
         text = file.read()
     text = text.replace("\n", " ")
     text = text.replace(",", "").replace(".", "").replace("?", "").replace("!", "")
     text = text.lower()
-    words = text.split()
-    words.sort()
-    return words
+    words1 = text.split()
+    words1.sort()
+    return words1
 
-def g_chars(filename):
-    with open(filename, encoding="utf8") as file:
-        chars = file.read()
-    chars = chars.replace("\n", " ")
-    chars = chars.lower()
-    return chars
 
-def chars_nospace(filename):
-    with open(filename, encoding="utf8") as file:
-        chars1 = file.read()
-    chars1 = chars1.replace("\n", " ")
-    chars1 = chars1.lower()
-    chars1 = chars1.replace(" ", "")
-    return chars1
-
-def g_words_dict(words):
-    words_dict = dict()
- 
-    for word in words:
-        if word in words_dict:
-            words_dict[word] = words_dict[word] + 1
+def words_2(words_1):
+    words2 = dict()
+    for word in words_1:
+        if word in words2:
+            words2[word] = words2[word] + 1
         else:
-            words_dict[word] = 1
-    return words_dict
- 
+            words2[word] = 1
+    return words2
+
+
+def symbols_1(text_file):
+    with open(text, encoding="utf8") as file:
+        symbols1 = file.read()
+    symbols1 = symbols1.replace("\n", " ")
+    symbols1 = symbols1.lower()
+    return symbols1
+
+
+def symbols_2(text_file):
+    with open(text, encoding="utf8") as file:
+        symbols2 = file.read()
+    symbols2 = symbols2.replace("\n", " ")
+    symbols2 = symbols2.lower()
+    symbols2 = symbols2.replace(" ", "")
+    return symbols2
+
  
 def main(): 
-    filename = "Vedmak.txt"
-    words = g_words(filename)
-    words_dict = g_words_dict(words)
-    characters = g_chars(filename)
-    characters1 = chars_nospace(filename) 
-    print("Cимволи без пропусків: %d" % len(characters1))
-    print("Символи: %d" % len(characters))
-    print("Слова: %d" % len(words))
-    print("Слова, що не повторюються: %d" % len(words_dict))
+    text = "Vedmak.txt"
+    words1 = words_1(text_file)
+    words2 = words_2(words_1)
+    symbols1 = symbols_1(text_file)
+    symbols2 = symbols_2(text_file) 
+    print("Слова: %d" % len(words1))
+    print("Слова, що не повторюються: %d" % len(words2))
+    print("Символи: %d" % len(symbols1))
+    print("Cимволи без пропусків: %d" % len(symbols2))
+    
     
 if __name__ == "__main__":
         main()
-        
 input()
