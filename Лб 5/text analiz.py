@@ -41,7 +41,7 @@ def symbols_2(text_file):
 
  
 def main(): 
-    text = "Vedmak.txt"
+    text_file = "Vedmak.txt"
     words1 = words_1(text_file)
     words2 = words_2(words_1)
     symbols1 = symbols_1(text_file)
